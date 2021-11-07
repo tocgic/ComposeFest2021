@@ -26,8 +26,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun MyApp() {
-    Greeting("Android")
+private fun MyApp(names: List<String> = listOf("World", "Compose")) {
+    Column {
+        for (name in names) {
+            Greeting(name)
+        }
+    }
 }
 
 @Composable
