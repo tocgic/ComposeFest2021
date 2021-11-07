@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
@@ -69,10 +71,15 @@ fun OnboardingScreen(onContinueClicked: () -> Unit) {
 }
 
 @Composable
-private fun Greetings(names: List<String> = listOf("World", "Compose")) {
-    Column(modifier = Modifier.padding(4.dp)) {
-        for (name in names) {
-            Greeting(name)
+private fun Greetings(names: List<String> = List(1000) { "$it"}) {
+    // LazyColumn : RecyclerView 처럼 자식을 재활용하지 않음.
+    // 스크롤할 때 새 Composable을 내보내고 여전히 성능이 좋음.
+    // Composable을 내보내는 것이 Android를 인스턴스화하는 것과 비교하여 상대적으로 저렴하기 때문.
+    LazyColumn(modifier = Modifier.padding(4.dp)) {
+        // androidx.compose.foundation.lazy.items Android Studio 에서 기본적으로 다른 항목 기능을 선택하므로 가져오기 를 수행 해야 합니다.
+        // import androidx.compose.foundation.lazy.items
+        items(items = names) { name ->
+            Greeting(name = name)
         }
     }
 }
