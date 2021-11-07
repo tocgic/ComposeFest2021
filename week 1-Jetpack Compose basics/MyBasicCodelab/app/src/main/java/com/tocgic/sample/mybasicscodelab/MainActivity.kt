@@ -36,7 +36,21 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun MyApp(names: List<String> = listOf("World", "Compose")) {
+fun MyApp() {
+    // by 사용시 오류 : getValue/setValue import 해야 함
+    // import androidx.compose.runtime.getValue
+    // import androidx.compose.runtime.setValue
+    var shouldShowOnboarding by remember { mutableStateOf(true) }
+
+    if (shouldShowOnboarding) {
+        OnboardingScreen(onContinueClicked = { shouldShowOnboarding = false })
+    } else {
+        Greetings()
+    }
+}
+
+@Composable
+private fun Greetings(names: List<String> = listOf("World", "Compose")) {
     Column(modifier = Modifier.padding(4.dp)) {
         for (name in names) {
             Greeting(name)
@@ -80,12 +94,7 @@ fun DefaultPreview() {
 }
 
 @Composable
-fun OnboardingScreen() {
-    // by 사용시 오류 : getValue/setValue import 해야 함
-    // import androidx.compose.runtime.getValue
-    // import androidx.compose.runtime.setValue
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
-    
+fun OnboardingScreen(onContinueClicked: () -> Unit) {
     Surface {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -95,7 +104,7 @@ fun OnboardingScreen() {
             Text("Welcome to the Basics Codelab!")
             Button(
                 modifier = Modifier.padding(vertical = 24.dp),
-                onClick = { shouldShowOnboarding = false }
+                onClick = onContinueClicked
             ) {
                 Text("Continue")
             }
@@ -107,6 +116,6 @@ fun OnboardingScreen() {
 @Composable
 fun OnboardingPreview() {
     MyBasicsCodelabTheme {
-        OnboardingScreen()
+        OnboardingScreen(onContinueClicked = {})
     }
 }
