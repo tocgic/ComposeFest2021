@@ -1,5 +1,6 @@
 package com.tocgic.sample.mybasicscodelab
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -131,7 +132,19 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     MyBasicsCodelabTheme {
-        MyApp()
+        Greetings()
+    }
+}
+
+@Preview(
+    showBackground = true,
+    widthDp = 320,
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Composable
+fun DefaultPreviewDark() {
+    MyBasicsCodelabTheme {
+        Greetings()
     }
 }
 
