@@ -3,6 +3,7 @@ package com.tocgic.sample.mybasicscodelab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -89,7 +90,9 @@ private fun Greetings(names: List<String> = List(1000) { "$it"}) {
 fun Greeting(name: String) {
     val expanded = remember { mutableStateOf(false) }
 
-    val extraPadding = if (expanded.value) 48.dp else 0.dp
+    val extraPadding by animateDpAsState(
+        if (expanded.value) 48.dp else 0.dp
+    )
 
     Surface(
         color = MaterialTheme.colors.primary,
