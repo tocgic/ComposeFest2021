@@ -128,6 +128,14 @@ fun Greeting(name: String) {
     }
 }
 
+@Preview(showBackground = true, widthDp = 320, heightDp = 320)
+@Composable
+fun OnboardingPreview() {
+    MyBasicsCodelabTheme {
+        OnboardingScreen(onContinueClicked = {})
+    }
+}
+
 @Preview(showBackground = true, widthDp = 320)
 @Composable
 fun DefaultPreview() {
@@ -145,13 +153,5 @@ fun DefaultPreview() {
 fun DefaultPreviewDark() {
     MyBasicsCodelabTheme {
         Greetings()
-    }
-}
-
-@Preview(showBackground = true, widthDp = 320, heightDp = 320)
-@Composable
-fun OnboardingPreview() {
-    MyBasicsCodelabTheme {
-        OnboardingScreen(onContinueClicked = {})
     }
 }
