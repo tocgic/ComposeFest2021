@@ -50,6 +50,25 @@ fun MyApp() {
 }
 
 @Composable
+fun OnboardingScreen(onContinueClicked: () -> Unit) {
+    Surface {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("Welcome to the Basics Codelab!")
+            Button(
+                modifier = Modifier.padding(vertical = 24.dp),
+                onClick = onContinueClicked
+            ) {
+                Text("Continue")
+            }
+        }
+    }
+}
+
+@Composable
 private fun Greetings(names: List<String> = listOf("World", "Compose")) {
     Column(modifier = Modifier.padding(4.dp)) {
         for (name in names) {
@@ -90,25 +109,6 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     MyBasicsCodelabTheme {
         MyApp()
-    }
-}
-
-@Composable
-fun OnboardingScreen(onContinueClicked: () -> Unit) {
-    Surface {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("Welcome to the Basics Codelab!")
-            Button(
-                modifier = Modifier.padding(vertical = 24.dp),
-                onClick = onContinueClicked
-            ) {
-                Text("Continue")
-            }
-        }
     }
 }
 
