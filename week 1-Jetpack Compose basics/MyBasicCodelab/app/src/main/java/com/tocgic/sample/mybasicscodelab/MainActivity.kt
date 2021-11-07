@@ -44,7 +44,7 @@ fun Greeting(name: String) {
     }
 }
 
-@Preview(showBackground = true, name = "Text preview")
+@Preview(showBackground = true, widthDp = 320)
 @Composable
 fun DefaultPreview() {
     MyBasicsCodelabTheme {
