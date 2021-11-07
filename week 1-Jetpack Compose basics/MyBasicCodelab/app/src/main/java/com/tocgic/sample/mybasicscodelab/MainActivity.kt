@@ -26,6 +26,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tocgic.sample.mybasicscodelab.ui.theme.MyBasicsCodelabTheme
@@ -112,7 +113,9 @@ fun Greeting(name: String) {
                 Text(text = "Hello,")
                 Text(
                     text = name,
-                    style = MaterialTheme.typography.h4
+                    style = MaterialTheme.typography.h4.copy(
+                        fontWeight = FontWeight.ExtraBold
+                    )
                 )
             }
             OutlinedButton(
