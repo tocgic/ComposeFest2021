@@ -4,4 +4,5 @@
     <string name="title_activity_create_custom_layout">CreateCustomLayoutActivity</string>
     <string name="title_activity_complex_custom_layout">ComplexCustomLayoutActivity</string>
     <string name="title_activity_constraint_layout">ConstraintLayoutActivity</string>
+    <string name="title_activity_intrinsics">IntrinsicsActivity</string>
 </resources>

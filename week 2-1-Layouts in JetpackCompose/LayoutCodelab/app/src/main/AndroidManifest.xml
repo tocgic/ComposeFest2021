@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutCodelab">
         <activity
+            android:name=".IntrinsicsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intrinsics"
+            android:theme="@style/Theme.LayoutCodelab.NoActionBar" />
+        <activity
             android:name=".ConstraintLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_constraint_layout"
