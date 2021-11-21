@@ -3,8 +3,10 @@ package com.tocgic.sample.layoutcodelab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -36,7 +38,7 @@ class IntrinsicsActivity : ComponentActivity() {
 
 @Composable
 fun TwoTexts(modifier: Modifier = Modifier, text1: String, text2: String) {
-    Row(modifier = modifier) {
+    Row(modifier = modifier.height(IntrinsicSize.Min)) {
         Text(
             modifier = Modifier
                 .weight(1f)
