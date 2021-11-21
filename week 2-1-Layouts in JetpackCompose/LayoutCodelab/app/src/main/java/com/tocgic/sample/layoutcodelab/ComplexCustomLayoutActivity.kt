@@ -5,12 +5,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -33,16 +35,11 @@ class ComplexCustomLayoutActivity : ComponentActivity() {
             LayoutCodelabTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting2("Android")
+                    BodyContent2()
                 }
             }
         }
     }
-}
-
-@Composable
-fun Greeting2(name: String) {
-    Text(text = "Hello $name!")
 }
 
 @Composable
@@ -120,7 +117,8 @@ fun Chip(modifier: Modifier = Modifier, text: String) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
-                modifier = Modifier.size(16.dp, 16.dp)
+                modifier = Modifier
+                    .size(16.dp, 16.dp)
                     .background(color = MaterialTheme.colors.secondary)
             )
             Spacer(Modifier.width(4.dp))
@@ -137,9 +135,13 @@ val topics = listOf(
 
 @Composable
 fun BodyContent2(modifier: Modifier = Modifier) {
-    StaggeredGrid(modifier = modifier, rows = 5) {
-        for (topic in topics) {
-            Chip(modifier = Modifier.padding(8.dp), text = topic)
+    Row(
+        modifier = modifier.horizontalScroll(rememberScrollState())
+    ) {
+        StaggeredGrid {
+            for (topic in topics) {
+                Chip(modifier = Modifier.padding(8.dp), text = topic)
+            }
         }
     }
 }
