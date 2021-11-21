@@ -1,8 +1,10 @@
 package com.tocgic.sample.layoutcodelab
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -38,8 +40,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun PhotographerCard() {
-    Row {
+fun PhotographerCard(modifier: Modifier = Modifier) {
+    Row(
+        modifier
+            .padding(16.dp)
+            .clickable(onClick = {})
+    ) {
         Surface(
             modifier = Modifier.size(50.dp),
             shape = CircleShape,
@@ -63,6 +69,17 @@ fun PhotographerCard() {
 @Preview(showBackground = true)
 @Composable
 fun PhotographerCardPreview() {
+    LayoutCodelabTheme {
+        PhotographerCard()
+    }
+}
+
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    showBackground = true
+)
+@Composable
+fun PhotographerCardPreviewDark() {
     LayoutCodelabTheme {
         PhotographerCard()
     }
