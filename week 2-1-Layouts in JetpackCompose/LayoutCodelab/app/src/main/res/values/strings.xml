@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LayoutCodelab</string>
     <string name="title_activity_working_with_list">WorkingWithListActivity</string>
+    <string name="title_activity_create_custom_layout">CreateCustomLayoutActivity</string>
 </resources>
