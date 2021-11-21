@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import com.tocgic.sample.layoutcodelab.ui.theme.LayoutCodelabTheme
 
 class ConstraintLayoutActivity : ComponentActivity() {
@@ -85,6 +86,12 @@ fun LargeConstraintLayout() {
             "This is a very very very very very very very long text",
             Modifier.constrainAs(text) {
                 linkTo(start = guideline, end = parent.end)
+                width = Dimension.preferredWrapContent
+//- preferredWrapContent : 레이아웃은 해당 차원의 제약 조건이 적용되는 랩 콘텐츠
+//- wrapContent : 제약 조건에서 허용하지 않는 경우에도 레이아웃은 랩 콘텐츠
+//- fillToConstraints : 레이아웃은 해당 치수의 제약 조건으로 정의된 공간을 채우도록 확장
+//- preferredValue : 레이아웃은 해당 차원의 제약 조건에 따라 고정 dp 값
+//- value : 레이아웃은 해당 차원의 제약 조건에 관계없이 고정 dp 값
             }
         )
     }
