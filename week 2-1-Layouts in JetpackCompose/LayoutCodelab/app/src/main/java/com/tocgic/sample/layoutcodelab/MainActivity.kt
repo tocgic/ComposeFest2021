@@ -91,3 +91,25 @@ fun PhotographerCardPreviewDark() {
         PhotographerCard()
     }
 }
+
+/*
+4. Slot API
+
+@Composable
+fun Button(
+    modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null,
+    ...
+    content: @Composable () -> Unit
+)
+
+후행 람다구문(content: @Composable () -> Unit) 을 통해 확장할 수 있다
+
+Button {
+    Row {
+        MyImage()
+        Spacer(4.dp)
+        Text("Button")
+    }
+}
+ */
