@@ -138,9 +138,9 @@ val topics = listOf(
 fun BodyContent2(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
-            .background(color = Color.LightGray)
-            .size(200.dp)
+            .background(color = Color.LightGray, shape = RectangleShape)
             .padding(16.dp)
+            .size(200.dp)
             .horizontalScroll(rememberScrollState())
     ) {
         StaggeredGrid {
