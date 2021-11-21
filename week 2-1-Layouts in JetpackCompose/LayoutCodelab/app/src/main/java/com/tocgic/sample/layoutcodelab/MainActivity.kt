@@ -8,7 +8,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -23,7 +22,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,10 +32,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LayoutCodelabTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    PhotographerCard()
-                }
+//                // A surface container using the 'background' color from the theme
+//                Surface(color = MaterialTheme.colors.background) {
+//                    PhotographerCard()
+//                }
             }
         }
     }
@@ -73,24 +71,24 @@ fun PhotographerCard(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PhotographerCardPreview() {
-    LayoutCodelabTheme {
-        PhotographerCard()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PhotographerCardPreview() {
+//    LayoutCodelabTheme {
+//        PhotographerCard()
+//    }
+//}
 
-@Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-    showBackground = true
-)
-@Composable
-fun PhotographerCardPreviewDark() {
-    LayoutCodelabTheme {
-        PhotographerCard()
-    }
-}
+//@Preview(
+//    uiMode = Configuration.UI_MODE_NIGHT_YES,
+//    showBackground = true
+//)
+//@Composable
+//fun PhotographerCardPreviewDark() {
+//    LayoutCodelabTheme {
+//        PhotographerCard()
+//    }
+//}
 
 /*
 4. Slot API
