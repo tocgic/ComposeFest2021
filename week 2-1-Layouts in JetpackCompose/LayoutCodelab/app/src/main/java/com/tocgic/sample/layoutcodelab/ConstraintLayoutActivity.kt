@@ -33,25 +33,37 @@ fun ConstraintLayoutContent() {
     ConstraintLayout {
 
         // Create references for the composables to constrain
-        val (button, text) = createRefs()
+        val (button1, button2, text) = createRefs()
 
         Button(
             onClick = { /* Do something */ },
             // Assign reference "button" to the Button composable
             // and constrain it to the top of the ConstraintLayout
-            modifier = Modifier.constrainAs(button) {
+            modifier = Modifier.constrainAs(button1) {
                 top.linkTo(parent.top, margin = 16.dp)
             }
         ) {
-            Text("Button")
+            Text("Button 1")
         }
 
         // Assign reference "text" to the Text composable
         // and constrain it to the bottom of the Button composable
         Text("Text", Modifier.constrainAs(text) {
-            top.linkTo(button.bottom, margin = 16.dp)
-            centerHorizontallyTo(parent)
+            top.linkTo(button1.bottom, margin = 16.dp)
+            centerAround(button1.end)
         })
+
+        // 장벽(및 다른 모든 도우미)은 ConstraintLayout의 본문에서 만들 수 있지만 constrainAs 내부에서는 만들 수 없습니다.
+        val barrier = createEndBarrier(button1, text)
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.constrainAs(button2) {
+                top.linkTo(parent.top, margin = 16.dp)
+                start.linkTo(barrier)
+            }
+        ) {
+            Text("Button 2")
+        }
     }
 }
 
