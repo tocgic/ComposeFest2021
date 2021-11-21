@@ -23,6 +23,8 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.HealthAndSafety
+import androidx.compose.material.icons.filled.LaptopChromebook
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
@@ -131,6 +133,12 @@ fun LayoutCodelab() {
                 actions = {
                     IconButton(onClick = { /*TODO*/ }) {
                         Icon(Icons.Filled.Favorite, contentDescription = null)
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(Icons.Filled.LaptopChromebook, contentDescription = null)
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(Icons.Filled.HealthAndSafety, contentDescription = null)
                     }
                 }
             )
