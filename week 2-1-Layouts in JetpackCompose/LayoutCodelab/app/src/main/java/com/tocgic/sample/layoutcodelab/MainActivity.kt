@@ -18,6 +18,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
@@ -119,10 +120,12 @@ fun LayoutCodelab() {
     // content: @Composable (PaddingValues) -> Unit
     Scaffold(
         topBar = {
-            Text(
-                text = "LayoutCodelab",
-                style = MaterialTheme.typography.h3
-            )
+            TopAppBar {
+                Text(
+                    text = "LayoutCodelab",
+                    style = MaterialTheme.typography.h3
+                )
+            }
         }
     ) { paddingValues ->
         BodyContent(Modifier.padding(paddingValues))
