@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutCodelab">
         <activity
+            android:name=".ComplexCustomLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_complex_custom_layout"
+            android:theme="@style/Theme.LayoutCodelab.NoActionBar" />
+        <activity
             android:name=".CreateCustomLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_create_custom_layout"
@@ -20,8 +25,7 @@
             android:name=".WorkingWithListActivity"
             android:exported="true"
             android:label="@string/title_activity_working_with_list"
-            android:theme="@style/Theme.LayoutCodelab.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.LayoutCodelab.NoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
