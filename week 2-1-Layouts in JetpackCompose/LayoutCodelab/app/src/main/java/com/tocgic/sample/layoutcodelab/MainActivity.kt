@@ -117,7 +117,14 @@ Button {
 @Composable
 fun LayoutCodelab() {
     // content: @Composable (PaddingValues) -> Unit
-    Scaffold { paddingValues ->
+    Scaffold(
+        topBar = {
+            Text(
+                text = "LayoutCodelab",
+                style = MaterialTheme.typography.h3
+            )
+        }
+    ) { paddingValues ->
         BodyContent(Modifier.padding(paddingValues))
     }
 }
