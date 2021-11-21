@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -36,6 +37,7 @@ class MainActivity : ComponentActivity() {
 //                Surface(color = MaterialTheme.colors.background) {
 //                    PhotographerCard()
 //                }
+                LayoutCodelab()
             }
         }
     }
@@ -111,3 +113,19 @@ Button {
     }
 }
  */
+
+@Composable
+fun LayoutCodelab() {
+    // content: @Composable (PaddingValues) -> Unit
+    Scaffold { paddingValues ->
+        Text(text = "Hi there!", modifier = Modifier.padding(paddingValues))
+    }
+}
+
+@Preview
+@Composable
+fun LayoutCodelabPreview() {
+    LayoutCodelabTheme {
+        LayoutCodelab()
+    }
+}
