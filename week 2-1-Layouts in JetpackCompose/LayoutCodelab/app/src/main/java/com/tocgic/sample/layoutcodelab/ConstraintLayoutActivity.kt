@@ -50,6 +50,7 @@ fun ConstraintLayoutContent() {
         // and constrain it to the bottom of the Button composable
         Text("Text", Modifier.constrainAs(text) {
             top.linkTo(button.bottom, margin = 16.dp)
+            centerHorizontallyTo(parent)
         })
     }
 }
