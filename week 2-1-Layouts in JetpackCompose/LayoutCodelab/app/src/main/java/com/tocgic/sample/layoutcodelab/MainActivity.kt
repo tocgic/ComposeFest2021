@@ -118,7 +118,12 @@ Button {
 fun LayoutCodelab() {
     // content: @Composable (PaddingValues) -> Unit
     Scaffold { paddingValues ->
-        Text(text = "Hi there!", modifier = Modifier.padding(paddingValues))
+        Column(
+            modifier = Modifier.padding(paddingValues)
+        ) {
+            Text(text = "Hi there!")
+            Text(text = "Thanks for going through the Layouts codelab")
+        }
     }
 }
 
