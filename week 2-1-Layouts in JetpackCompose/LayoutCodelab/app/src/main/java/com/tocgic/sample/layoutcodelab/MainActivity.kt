@@ -136,12 +136,15 @@ fun LayoutCodelab() {
             )
         }
     ) { paddingValues ->
-        BodyContent(Modifier.padding(paddingValues))
+        // 2.Apply the modifier when calling the composable that will add the extra padding just when needed:
+        BodyContent(Modifier.padding(paddingValues).padding(8.dp))
     }
 }
 
 @Composable
 fun BodyContent(modifier: Modifier = Modifier) {
+    // 1.Apply the modifier to the only direct child inside the composable so that all calls to BodyContent apply the extra padding:
+    // Column(modifier = modifier.padding(8.dp) {
     Column(modifier = modifier) {
         Text(text = "Hi there!")
         Text(text = "Thanks for going through the Layouts codelab")
